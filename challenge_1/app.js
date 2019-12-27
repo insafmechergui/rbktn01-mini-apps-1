@@ -9,6 +9,7 @@ var allCells = document.getElementsByClassName("cell");
 //click
 for(var i = 0; i < allCells.length; i++) {
   allCells[i].addEventListener("click", function() {
+    //if cell is empty
     if(this.innerHTML === '') {
       if(x) {
         this.innerHTML = "X";
@@ -26,7 +27,8 @@ for(var i = 0; i < allCells.length; i++) {
     }
   });
 }
-//get the id 1
+
+//get the id of all the cells
 var cellClick1 = document.getElementById("1");
 var cellClick2 = document.getElementById("2");
 var cellClick3 = document.getElementById("3");
@@ -36,11 +38,16 @@ var cellClick6 = document.getElementById("6");
 var cellClick7 = document.getElementById("7");
 var cellClick8 = document.getElementById("8");
 var cellClick9 = document.getElementById("9");
+
+//change the color of the winner
 function colorWinner(cell1, cell2, cell3) {
   cell1.style.background ="green";
   cell2.style.background ="green";
   cell3.style.background ="green";
 }
+
+//return the winner cell
+//check all the possibilities of the cells
 function winner() {
   if(cellClick1.innerHTML !== "" && cellClick1.innerHTML === cellClick2.innerHTML && cellClick1.innerHTML === cellClick3.innerHTML) {
     colorWinner(cellClick1, cellClick2, cellClick3);
@@ -82,15 +89,10 @@ function winner() {
     console.log("win");
   }
 }
+
 //start new game
 function replay() {
   for(var i = 0; i < allCells.length; i++) {
     allCells[i].innerHTML = "";
   }
 }
-
-console.log('last page');
-
-
-
-
