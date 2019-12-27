@@ -36,33 +36,57 @@ var cellClick6 = document.getElementById("6");
 var cellClick7 = document.getElementById("7");
 var cellClick8 = document.getElementById("8");
 var cellClick9 = document.getElementById("9");
-
+function colorWinner(cell1, cell2, cell3) {
+  cell1.style.background ="green";
+  cell2.style.background ="green";
+  cell3.style.background ="green";
+}
 function winner() {
   if(cellClick1.innerHTML !== "" && cellClick1.innerHTML === cellClick2.innerHTML && cellClick1.innerHTML === cellClick3.innerHTML) {
+    colorWinner(cellClick1, cellClick2, cellClick3);
     console.log("win");
   }
   else if(cellClick4.innerHTML !== "" && cellClick4.innerHTML === cellClick5.innerHTML && cellClick4.innerHTML === cellClick6.innerHTML) {
+    colorWinner(cellClick4, cellClick5, cellClick6);
+
     console.log("win");
   }
   else if(cellClick7.innerHTML !== "" && cellClick7.innerHTML === cellClick8.innerHTML && cellClick7.innerHTML === cellClick9.innerHTML) {
+    colorWinner(cellClick7, cellClick8, cellClick9);
+
     console.log("win");
   }
   else if(cellClick1.innerHTML !== "" && cellClick1.innerHTML === cellClick4.innerHTML && cellClick1.innerHTML === cellClick7.innerHTML) {
+    colorWinner(cellClick1, cellClick4, cellClick7);
+
     console.log("win");
   }
   else if(cellClick2.innerHTML !== "" && cellClick2.innerHTML === cellClick5.innerHTML && cellClick2.innerHTML === cellClick8.innerHTML) {
+    colorWinner(cellClick2, cellClick5, cellClick8);
+
     console.log("win");
   }
   else if(cellClick3.innerHTML !== "" && cellClick3.innerHTML === cellClick6.innerHTML && cellClick3.innerHTML === cellClick9.innerHTML) {
+    colorWinner(cellClick3, cellClick6, cellClick9);
+
     console.log("win");
   }
   else if(cellClick1.innerHTML !== "" && cellClick1.innerHTML === cellClick5.innerHTML && cellClick1.innerHTML === cellClick9.innerHTML) {
+    colorWinner(cellClick1, cellClick5, cellClick9);
+
     console.log("win");
   }
   else if(cellClick3.innerHTML !== "" && cellClick3.innerHTML === cellClick5.innerHTML && cellClick3.innerHTML === cellClick7.innerHTML) {
+    colorWinner(cellClick3, cellClick5, cellClick7);
+
     console.log("win");
   }
-
+}
+//start new game
+function replay() {
+  for(var i = 0; i < allCells.length; i++) {
+    allCells[i].innerHTML = "";
+  }
 }
 
 console.log('last page');
