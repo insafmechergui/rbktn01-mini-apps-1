@@ -51,10 +51,13 @@ function colorWinner(cell1, cell2, cell3) {
 function winner() {
   if(cellClick1.innerHTML !== "" && cellClick1.innerHTML === cellClick2.innerHTML && cellClick1.innerHTML === cellClick3.innerHTML) {
     colorWinner(cellClick1, cellClick2, cellClick3);
+    cellClick1.prop('disabled', true);
+    cellClick2.prop('disabled', true);
+    cellClick3.prop('disabled', true);
+
     console.log("win");
   }
   else if(cellClick4.innerHTML !== "" && cellClick4.innerHTML === cellClick5.innerHTML && cellClick4.innerHTML === cellClick6.innerHTML) {
-    colorWinner(cellClick4, cellClick5, cellClick6);
 
     console.log("win");
   }
@@ -92,7 +95,10 @@ function winner() {
 
 //start new game
 function replay() {
+  x = true;
+  o = false;
   for(var i = 0; i < allCells.length; i++) {
     allCells[i].innerHTML = "";
+
   }
 }
